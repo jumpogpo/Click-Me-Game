@@ -11,7 +11,7 @@ def CalculateBMI():
         WeightUnitChose = WeightUnit.get()
         HeightUnitChose = HeightUnit.get()
 
-        if WeightUnitChose == "Kg":
+        if WeightUnitChose == "kg":
             WeightValue = float(Weight.get())
         elif WeightUnitChose == "g":
             WeightValue = float(Weight.get()) / 1000

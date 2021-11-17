@@ -15,11 +15,15 @@ def CalculateBMI():
             WeightValue = float(Weight.get())
         elif WeightUnitChose == "g":
             WeightValue = float(Weight.get()) / 1000
+        elif WeightUnitChose == "lbs":
+            WeightValue = float(Weight.get()) / 2.2046226218
 
         if HeightUnitChose == 'cm':
             HeightValue = float(Height.get()) / 100
         elif HeightUnitChose == 'm':
             HeightValue = float(Height.get())
+        elif HeightUnitChose == 'ft':
+            HeightValue = float(Height.get()) / 3.280839
 
         BMI = float("{:.2f}".format(WeightValue / (HeightValue ** 2)))
 
@@ -39,7 +43,7 @@ def CalculateBMI():
 
 Weight = StringVar()
 Height = StringVar()
-WeightUnit = StringVar(value='Kg')
+WeightUnit = StringVar(value='kg')
 HeightUnit = StringVar(value='cm')
 
 WeightLabel = Label(root, text="นํ้าหนัก", fg='Black', font=10, justify=LEFT)
@@ -47,8 +51,8 @@ HeightLabel = Label(root, text="ส่วนสูง", fg='Black', font=10, jus
 
 WeightUnitChoice = ttk.Combobox(width=4, font=30, textvariable=WeightUnit)
 HeightUnitChoice = ttk.Combobox(width=4, font=30, textvariable=HeightUnit)
-WeightUnitChoice['values']=('Kg', 'g')
-HeightUnitChoice['values']=('cm', 'm')
+WeightUnitChoice['values']=('kg', 'g', 'lbs')
+HeightUnitChoice['values']=('cm', 'm', 'ft')
 WeightUnitChoice['state'] = 'readonly'
 HeightUnitChoice['state'] = 'readonly'
 
